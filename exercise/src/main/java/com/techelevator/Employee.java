@@ -2,34 +2,31 @@ package com.techelevator;
 
 public class Employee {
 
-private long employeeID;
-private String firstName;
-private String lastName;
-private String email;
-private double salary;
-private Department department;
-private String hireDate;
+    private long employeeID;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private double salary;
+    private Department department;
+    private String hireDate;
 
-public static final double DEFAULT_SALARY = 60000;
+    public static final double DEFAULT_SALARY = 60000;
 
 
-public Employee(long employeeID, String firstName, String lastName, String email, Department department, String hireDate){
-    this.employeeID = employeeID;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.email = email;
-    this.department = department;
-    this.hireDate = hireDate;
-}
+    public Employee(long employeeID, String firstName, String lastName, String email, final double DEFAULT_SALARY, Department department, String hireDate) {
+        this.employeeID = employeeID;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.department = department;
+        this.hireDate = hireDate;
+        this.salary = DEFAULT_SALARY;
+    }
+    public Employee() {
 
-public Employee(long employeeID, String firstName, String lastName, String email, final double DEFAULT_SALARY, Department department, String hireDate) {
-    this.employeeID = employeeID;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.email = email;
-    this.department = department;
-    this.hireDate = hireDate;
-    this.salary = DEFAULT_SALARY;
+    }
+
+    public Employee(int i, String angie, String smith, String s, Department department, String s1) {
     }
 
     public long getEmployeeID() {

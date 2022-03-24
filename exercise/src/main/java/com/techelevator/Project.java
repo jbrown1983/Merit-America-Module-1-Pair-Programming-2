@@ -16,6 +16,16 @@ public class Project {
         this.startDate = startDate;
         this.dueDate = dueDate;
     }
+    @Override
+    public String toString() {
+        return "Project{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", startDate='" + startDate + '\'' +
+                ", dueDate='" + dueDate + '\'' +
+                ", teamMembers=" + teamMembers +
+                '}';
+    }
 
     public String getName() {
         return name;
