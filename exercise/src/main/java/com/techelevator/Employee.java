@@ -1,38 +1,95 @@
 package com.techelevator;
 
+import javax.print.attribute.standard.MediaSize;
+import java.util.Objects;
+
 public class Employee {
 
-    private int employeeID;
+    //Instance Variables
+    private double salary;
+    private long employeeId;
     private String firstName;
     private String lastName;
     private String email;
-    private double salary;
     private Department department;
     private String hireDate;
 
-   public static final double DEFAULT_SALARY = 60000;
+    private static final int STARTING_SALARY = 60000;
 
+//Constructors
 
-    public Employee(int employeeID, String firstName, String lastName, String email, Department department, String hireDate) {
-        this.employeeID = employeeID;
+    public Employee (long employeeId, String firstName,String lastName, String email, Department department, String hireDate){
+        this.employeeId = employeeId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.department = department;
         this.hireDate = hireDate;
-   }
-   public Employee() {
+        this.salary = STARTING_SALARY;
 
     }
 
-
-
-    public long getEmployeeID() {
-        return employeeID;
+    public Employee() {
+        this.employeeId = 001;
+        this.firstName = "Dean";
+        this.lastName = "Johnson";
+        this.email = "djohnson@teams.com";
+        this.department = null;
+        this.hireDate = "08/21/2020";
+        this.salary = STARTING_SALARY;
     }
 
-    public void setEmployeeID(int employeeID) {
-        this.employeeID = employeeID;
+    //Methods
+    public String getFullName() {
+        return (lastName + ", " + firstName);
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "salary=" + salary +
+                ", employeeId=" + employeeId +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", department=" + department +
+                ", hireDate='" + hireDate + '\'' +
+                '}';
+
+    }
+    // equls() ?? do we need all this??
+/* @Override
+public boolean equals(Object o) {
+if (this == o) return true;
+if (!(o instanceof Employee)) return false;
+Employee employee = (Employee) o;
+return Double.compare(employee.getSalary(),
+getSalary()) == 0 && getEmployeeId() == employee.getEmployeeId() && Objects.equals(getFirstName(),
+employee.getFirstName()) && Objects.equals(getLastName(),
+employee.getLastName()) && Objects.equals(getEmail(),
+employee.getEmail()) && Objects.equals(getDepartment(),
+employee.getDepartment()) && Objects.equals(getHireDate(),
+employee.getHireDate());
+}
+
+@Override
+public int hashCode() {
+return Objects.hash(getSalary(), getEmployeeId(), getFirstName(), getLastName(), getEmail(), getDepartment(), getHireDate());
+}
+*/
+    public void raiseSalary(double percent) {
+//SALARY(SALARY * (1.0 + (percent/100)));
+        salary = STARTING_SALARY * (1.0 + (percent/100));
+
+    }
+
+    //Getter/Setter
+    public long getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(long employeeId) {
+        this.employeeId = employeeId;
     }
 
     public String getFirstName() {
@@ -59,14 +116,6 @@ public class Employee {
         this.email = email;
     }
 
-    public double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
-
     public Department getDepartment() {
         return department;
     }
@@ -83,20 +132,12 @@ public class Employee {
         this.hireDate = hireDate;
     }
 
-public String getFullName(){
-    return lastName + ", " + firstName;
+    public double getSalary() {
+        return salary;
     }
 
-//public double raiseSalary(double percent){
-//    double raise = salary * (percent / 100);
-//    salary = salary + raise;
-//    double newSalary = salary;
-//    return newSalary;
-//
-//}
-    public String toString() {
-        return getFullName() + " (" + getSalary() + ") " + getDepartment();
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
 }
-
 

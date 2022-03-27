@@ -1,21 +1,28 @@
 package com.techelevator;
 
+import java.util.ArrayList;
 import java.util.List;
 
-
 public class Project {
+
+    //Instance Variables
     private String name;
     private String description;
     private String startDate;
     private String dueDate;
-    private List<Employee> teamMembers;
+    private List<Employee> teamMembers = new ArrayList<>();
 
-    public Project(String name, String description, String startDate, String dueDate){
+    //Constructors
+    public Project (String name, String description,String startDate, String dueDate) {
         this.name = name;
         this.description = description;
         this.startDate = startDate;
         this.dueDate = dueDate;
     }
+
+//Methods
+
+
     @Override
     public String toString() {
         return "Project{" +
@@ -27,6 +34,7 @@ public class Project {
                 '}';
     }
 
+    //Getter/Setter
     public String getName() {
         return name;
     }
@@ -66,4 +74,5 @@ public class Project {
     public void setTeamMembers(List<Employee> teamMembers) {
         this.teamMembers = teamMembers;
     }
+
 }

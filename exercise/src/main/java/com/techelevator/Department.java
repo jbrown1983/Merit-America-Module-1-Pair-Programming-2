@@ -1,20 +1,34 @@
 package com.techelevator;
 
 public class Department {
-    private int departmentID;
+
+    //Instance Variables
+    private int departmentId;
     private String name;
 
-    public Department(int departmentID, String name) {
-        this.departmentID = departmentID;
+    //Constructors - 2 args
+    public Department (int departmentId, String name){
+        this.departmentId = departmentId;
         this.name = name;
     }
+//Methods
 
-    public int getDepartmentID() {
-        return departmentID;
+
+    @Override
+    public String toString() {
+        return "Department{" +
+                "departmentId=" + departmentId +
+                ", name='" + name + '\'' +
+                '}';
     }
 
-    public void setDepartmentID(int departmentID) {
-        this.departmentID = departmentID;
+    //Getter/Setter
+    public int getDepartmentId() {
+        return departmentId;
+    }
+
+    public void setDepartmentId(int departmentId) {
+        this.departmentId = departmentId;
     }
 
     public String getName() {
@@ -25,8 +39,6 @@ public class Department {
         this.name = name;
     }
 
-    public String toString() {
-        return getName();
-    }
+
 }
 
